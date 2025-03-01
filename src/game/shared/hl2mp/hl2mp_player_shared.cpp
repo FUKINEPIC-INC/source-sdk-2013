@@ -19,6 +19,7 @@
 #include "SoundEmitterSystem/isoundemittersystembase.h"
 
 extern ConVar sv_footsteps;
+extern ConVar hl2mp_classic_footstepsounds;
 
 const char *g_ppszPlayerSoundPrefixNames[PLAYER_SOUNDS_MAX] =
 {
@@ -72,6 +73,13 @@ void CHL2MP_Player::PlayStepSound( Vector &vecOrigin, surfacedata_t *psurface, f
 {
 	if ( gpGlobals->maxClients > 1 && !sv_footsteps.GetFloat() )
 		return;
+
+	if (hl2mp_classic_footstepsounds.GetFloat())
+	{
+		BaseClass::PlayStepSound(vecOrigin, psurface, fvol, force);
+		return;
+	}
+		
 
 #if defined( CLIENT_DLL )
 	// during prediction play footstep sounds only once
