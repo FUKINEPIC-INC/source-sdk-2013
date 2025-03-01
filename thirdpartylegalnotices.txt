@@ -3,6 +3,28 @@ required legal notices for using such code are reproduced below in accordance wi
 Valve�s obligations to provide such notices:
 
 ************************************************************************************
+Dynamic RTT shadow angles:
+************************************************************************************
+
+//
+// Purpose: Provide world light-related functions to the client
+//
+// As the engine provides no access to brush/model data (brushdata_t, model_t),
+// we hence have no access to dworldlight_t. Therefore, we manually extract the
+// world light data from the BSP itself, before entities are initialized on map
+// load.
+//
+// To find the brightest light at a point, all world lights are iterated.
+// Lights whose radii do not encompass our sample point are quickly rejected,
+// as are lights that are not in our PVS, or visible from the sample point.
+// If the sky light is visible from the sample point, then it shall supersede
+// all other world lights.
+//
+// Written: November 2011
+// Author: Saul Rennison
+//
+
+************************************************************************************
 Xzip/Xunzip:
 ************************************************************************************
 
