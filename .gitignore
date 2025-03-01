@@ -502,4 +502,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-src/everything
+
+# Hide exe files in the game folder
+game/*.exe
