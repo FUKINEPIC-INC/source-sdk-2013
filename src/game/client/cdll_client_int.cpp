@@ -1642,6 +1642,17 @@ void CHLClient::LevelInitPreEntity( char const* pMapName )
 
 	ResetWindspeed();
 
+	// disable cl_localnetworkbackdoor if single player!
+	// Valve pls fix save/load in single player
+	if (gpGlobals->maxClients == 1)
+	{
+		engine->ClientCmd("cl_localnetworkbackdoor 0\n");
+	}
+	else
+	{
+		engine->ClientCmd("cl_localnetworkbackdoor 1\n");
+	}
+
 #if !defined( NO_ENTITY_PREDICTION )
 	// don't do prediction if single player!
 	// don't set direct because of FCVAR_USERINFO
