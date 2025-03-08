@@ -505,3 +505,25 @@ FodyWeavers.xsd
 
 # Hide exe files in the game folder
 game/*.exe
+
+# Hide Generated Files made by the engine
+game/mod_tf/GameState.txt
+game/mod_tf/*.dt
+game/mod_tf/*.dmx
+game/mod_tf/stats.txt
+game/mod_tf/*.vdf
+game/mod_tf/*.res
+game/mod_tf/save/*
+game/mod_tf/cfg/*
+game/mod_tf/media/*
+game/steam_appid.txt
+game/mod_hl2mp/cfg/*
+game/mod_hl2mp/save/*
+game/mod_hl2mp/voice_ban.dt
+game/mod_hl2mp/stats.txt
+game/mod_hl2mp/ServerConfig.vdf
+game/mod_hl2mp/materials/*
+game/platform/*
+*.ain
+*.lst
+*.scr
